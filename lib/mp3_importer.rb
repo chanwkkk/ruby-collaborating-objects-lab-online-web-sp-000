@@ -11,7 +11,7 @@ class MP3Importer
     #read from it and push all four documents into an array called files
 
     @files=Dir.new(@path).grep(/.*\.mp3/)
-    
+
   end
 
 def import
