@@ -1,3 +1,4 @@
+require 'pry'
 class MP3Importer
   attr_accessor :path, :files
 
@@ -10,10 +11,12 @@ class MP3Importer
     #read from it and push all four documents into an array called files
 
     @files=Dir.new(@path).grep(/.*\.mp3/)
+    
   end
 
 def import
   self.files.each do |file|
+    binding.pry
     #info_array[1]=artist
     #info_array[2]=name
     #info_array[3]=genre
@@ -22,3 +25,5 @@ def import
 end
 
 end
+
+MP3Importer.new("./spec/fixtures/mp3s").import
